@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title>MovieX - Free Movies</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        </head>
+        <body class="bg-gray-950 text-white">
+  <!-- Navbar -->
+    <header class="bg-gray-900 shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
+              <h1 class="text-2xl font-bold text-red-500">MovieX</h1>
+                    <nav class="space-x-6">
+                            <a href="https://domicilesweetheart.com/mx44vfpa1j?key=44684083c51062cf78f0b1b065a2d5af" class="hover:text-red-400">Movies</a>
+                                    <a href="https://domicilesweetheart.com/mx44vfpa1j?key=44684083c51062cf78f0b1b065a2d5af" class="hover:text-red-400">Add Movie</a>
+                                          </nav>
+                                              </div>
+                                                </header>
+    </div>
+      <!-- Hero Section -->
+        <section class="relative bg-cover bg-center h-[400px]" style="background-image: url('https://image.tmdb.org/t/p/original/8YFL5QQVPy3AgrEQxNYVSgiPEbe.jpg');">
+            <div class="absolute inset-0 bg-black/60 flex flex-col items-center justify-center">
+                  <h2 class="text-4xl md:text-5xl font-bold mb-4">Welcome to MovieX</h2>
+                        <p class="text-lg text-gray-300 mb-6">Watch the latest movies for free</p>
+                              <a href="https://domicilesweetheart.com/mx44vfpa1j?key=44684083c51062cf78f0b1b065a2d5af" class="px-6 py-3 bg-red-500 rounded-xl hover:bg-blu-600 transition">Explore Movies</a>
+                                  </div>
+                                    </section>
+  <!-- Movie List -->
+    <section id="movies" class="max-w-7xl mx-auto p-6">
+        <h3 class="text-2xl font-semibold mb-6"> </h3>
+            <div id="movieGrid" class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+              </section>
+  <!-- Video Modal -->
+    <div id="videoModal" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-50">
+        <div class="bg-gray-900 p-4 rounded-xl shadow-lg max-w-3xl w-full relative">
+              <button onclick="closeModal()" class="absolute top-2 right-2 text-white bg-red-600 px-3 py-1 rounded">–</button>
+                    <div id="videoContainer" class="aspect-video"></div>
+                        </div>
+                          </div>
+  <!-- Footer -->
+    <footer class="bg-gray-900 text-center p-4 mt-10">
+        <p class="text-gray-400">Â© 2025 MovieX. All rights reserved.</p>
+          </footer>
+  <script>
+      // Data film default (YouTube + MP4 contoh)
+          let movies = JSON.parse(localStorage.getItem("movies")) || [
+                { 
+                        title: "Oppenheimer", 
+                                rating: 8.6, 
+                                        img: "https://image.tmdb.org/t/p/w500/8GxF3VHxE3XT3LbZ9oKcDgF4R0F.jpg", 
+                                                video: "https://www.youtube.com/embed/uYPbbksJxIg" 
+                                                      },
+                                                            { 
+                                                                    title: "Sample MP4 Movie", 
+                                                                            rating: 8.0, 
+                                                                                    img: "https://dummyimage.com/600x400/000/fff&text=Sample+MP4", 
+                                                                                            video: "https://www.w3schools.com/html/mov_bbb.mp4" 
+                                                                                                  }
+                                                                                                      ];
+    const movieGrid = document.getElementById("movieGrid");
+        const movieForm = document.getElementById("movieForm");
+            const formTitle = document.getElementById("formTitle");
+                const submitBtn = document.getElementById("submitBtn");
+                    const editIndex = document.getElementById("editIndex");
+                        const videoModal = document.getElementById("videoModal");
+                            const videoContainer = document.getElementById("videoContainer");
